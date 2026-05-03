@@ -7,14 +7,14 @@ routeFilmes.patch("/:id", (req, res) => {
   const { id } = req.params;
   const { nome } = req.body;
 
-  const filmesUpdate = frutasService.updatePatch(id, nome);
+  const filmesUpdate = filmesService.updatePatch(id, nome);
 
   if (!filmesUpdate) {
     return res
       .status(404)
       .json({
         message:
-          "filme não encontrada, não foi possivel realizar a atualização.",
+          "filme não encontrado, não foi possivel realizar a atualização.",
       });
   }
 
